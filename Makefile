@@ -19,4 +19,4 @@ format: ## Run pre-commit hooks
 
 sync: ## Merge changes from main branch to your current branch
 	git pull
-	git pull origin main
+	git pull origin master
