@@ -2,10 +2,8 @@
 
 # Cats Fun Site
 
-<br>
-[![tests](https://github.com/yulachi/cats-fun-site/actions/workflows/test.yml/badge.svg)](https://github.com/yulachi/cats-fun-site/actions/workflows/test.yml)
-[![code-quality](https://github.com/yulachi/cats-fun-site/actions/workflows/code-quality-main.yaml/badge.svg)](https://github.com/yulachi/cats-fun-site/actions/workflows/code-quality-main.yaml)
-<br>
+<br>[![code-quality](https://github.com/yulachi/cats-fun-site/actions/workflows/code-quality-main.yaml/badge.svg)](https://github.com/yulachi/cats-fun-site/actions/workflows/code-quality-main.yaml)
+[![tests](https://github.com/yulachi/cats-fun-site/actions/workflows/test.yml/badge.svg)](https://github.com/yulachi/cats-fun-site/actions/workflows/test.yml)<br>
 
 </div>
 
