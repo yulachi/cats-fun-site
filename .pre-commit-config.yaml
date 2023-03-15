@@ -24,7 +24,7 @@ repos:
 
   # python docstring formatting
   - repo: https://github.com/myint/docformatter
-    rev: v1.6.0.rc1
+    rev: v1.5.1
     hooks:
       - id: docformatter
         args: [--in-place, --wrap-summaries=99, --wrap-descriptions=99]
@@ -57,7 +57,7 @@ repos:
 
   # word spelling linter
   - repo: https://github.com/codespell-project/codespell
-    rev: v2.2.2
+    rev: v2.2.4
     hooks:
       - id: codespell
         args:
@@ -73,7 +73,7 @@ repos:
 
   # ruff linter
   - repo: https://github.com/charliermarsh/ruff-pre-commit
-    rev: v0.0.254
+    rev: v0.0.255
     hooks:
       - id: ruff
         args: [--fix, --exit-non-zero-on-fix]

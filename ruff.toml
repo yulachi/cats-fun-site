@@ -19,6 +19,16 @@ namespace-packages = [
 # Ignore 'F401' (unused-import) in all '__init__.py' files.
 "__init__.py" = ["F401"]
 
+# Ignore 'COM812' (trailing comma missing) and
+# 'I001' (import block is un-sorted or un-formatted) in all django's migrations files
+"polls/migrations/**" = [
+	"COM812",
+	"I001",
+]
+
+# Ignore 'PT009' (use a regular `assert` instead of unittest-style `assertIs`)
+"test*.py" = ["PT009"]
+
 [pydocstyle]
 convention = "google"
 
