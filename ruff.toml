@@ -21,7 +21,7 @@ namespace-packages = [
 
 # Ignore 'COM812' (trailing comma missing) and
 # 'I001' (import block is un-sorted or un-formatted) in all django's migrations files
-"polls/migrations/**" = [
+"**/migrations/**" = [
 	"COM812",
 	"I001",
 ]
