@@ -28,17 +28,11 @@ def wild(request: HttpRequest):
 
 
 def guests(request: HttpRequest):
-    print("Method: %r\n%r", request.method, request.POST)
     if request.method == "POST":
         form = PersonForm(request.POST)
-        print("GOT FORM")
-        print(form, form.is_valid(), form.data)
         if form.is_valid():
-            print("FORM IS VALID")
             person = form.save()
             return HttpResponseRedirect(reverse("cats:person", args=(person.id,)))
-        else:
-            print(form.errors)
     else:
         form = PersonForm()
 

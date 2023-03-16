@@ -10,7 +10,7 @@ class PersonForm(forms.ModelForm):
 
         labels = {
             "first_name": "Имя",
-            "last_name": "Фамилия",
-            "gender": "Пол",
-            "age": "Возраст",
+            "last_name": "Фaмилия",
+            "gender": "Пoл",
+            "age": "Boзpacт",
         }
