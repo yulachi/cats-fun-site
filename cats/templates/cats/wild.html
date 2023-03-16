@@ -1,0 +1,151 @@
+<html>
+{% load static %}
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Котики это чудо</title>
+    <link rel="stylesheet" href="{% static 'cats/navigation.css' %}" />
+</head>
+
+<body>
+    <div>
+        <div class="navigation">
+            <table width="100%">
+                <tr>
+                    <td class="inactive">
+                        <a href="{% url 'cats:index' %}"> Главная </a>
+                    </td>
+                    <td class="inactive">
+                        <a href="{% url 'cats:memes' %}">
+                                Мемы с котиками
+                            </a>
+                    </td>
+                    <td class="inactive">
+                        <a href="{% url 'cats:perse' %}">
+                                Персидские котики
+                            </a>
+                    </td>
+                    <td class="inactive">
+                        <a href="{% url 'cats:scotland' %}">
+                                Шотландские котики
+                            </a>
+                    </td>
+                    <td class="active">
+                        <a href="{% url 'cats:wild' %}"> Дикие котики </a>
+                    </td>
+
+                    <td class="inactive">
+                        <a href="{% url 'cats:guests' %}"> Ваши котики </a>
+                    </td>
+
+                    <td class="med">
+                        <a href="https://www.instagram.com/cats_of_instagram/" target="_blank">
+                            <img src="{% static 'cats/images/instagram.png' %}" height="30px" />
+                        </a>
+                    </td>
+                    <td class="med">
+                        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">
+                            <img src="{% static 'cats/images/youtube.png' %}" height="45px" />
+                        </a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <center>
+        <h1>
+            <font style='font-family: Georgia,cursive'> Дикие кошки </font>
+        </h1>
+
+        <h2>
+            <font style='font-family: Garamond,cursive'> Коллекция лучших фотографий </font>
+        </h2>
+
+    </center>
+
+
+    <center>
+        <table>
+            <tr>
+                <td>
+                    <img src="{% static 'cats/images/wild/lion.jpg' %}" width=300px></img>
+                </td>
+                <td>
+                    <font style='font-family: Comic Sans MS,cursive'> Лев </font>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <img src="{% static 'cats/images/wild/snow_leopard.jpg' %}" width=300px></img>
+                </td>
+                <td>
+                    <font style='font-family: Comic Sans MS,cursive'> Снежный барс </font>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <img src="{% static 'cats/images/wild/panther.jpg' %}" width=300px></img>
+                </td>
+                <td>
+                    <font style='font-family: Comic Sans MS,cursive'> Пантера </font>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <img src="{% static 'cats/images/wild/jaguar.jpg' %}" width=300px></img>
+                </td>
+                <td>
+                    <font style='font-family: Comic Sans MS,cursive'> Ягуар </font>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <img src="{% static 'cats/images/wild/tiger.jpg' %}" width=300px></img>
+                </td>
+                <td>
+                    <font style='font-family: Comic Sans MS,cursive'> Тигр </font>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <img src="{% static 'cats/images/wild/dune_cat.jpg' %}" width=300px></img>
+                </td>
+                <td>
+                    <font style='font-family: Comic Sans MS,cursive'> Барханный кот </font>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <img src="{% static 'cats/images/wild/manul.jpg' %}" width=300px></img>
+                </td>
+                <td>
+                    <font style='font-family: Comic Sans MS,cursive'> Манул </font>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <img src="{% static 'cats/images/wild/puma.jpg' %}" width=300px></img>
+                </td>
+                <td>
+                    <font style='font-family: Comic Sans MS,cursive'> Пума </font>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <img src="{% static 'cats/images/wild/oncilla.jpg' %}" width=300px></img>
+                </td>
+                <td>
+                    <font style='font-family: Comic Sans MS,cursive'> Онцилла </font>
+                </td>
+            </tr>
+
+        </table>
+    </center>
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+<html>
+{% load static %}
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Котики это чудо</title>
+    <link rel="stylesheet" href="{% static 'cats/navigation.css' %}" />
+</head>
+
+<body>
+    <div>
+        <div class="navigation">
+            <table width="100%">
+                <tr>
+                    <td class="inactive">
+                        <a href="{% url 'cats:index' %}"> Главная </a>
+                    </td>
+                    <td class="inactive">
+                        <a href="{% url 'cats:memes' %}">
+                                Мемы с котиками
+                            </a>
+                    </td>
+                    <td class="inactive">
+                        <a href="{% url 'cats:perse' %}">
+                                Персидские котики
+                            </a>
+                    </td>
+                    <td class="inactive">
+                        <a href="{% url 'cats:scotland' %}">
+                                Шотландские котики
+                            </a>
+                    </td>
+                    <td class="inactive">
+                        <a href="{% url 'cats:wild' %}"> Дикие котики </a>
+                    </td>
+
+                    <td class="active">
+                        <a href="{% url 'cats:guests' %}"> Ваши котики </a>
+                    </td>
+
+                    <td class="med">
+                        <a href="https://www.instagram.com/cats_of_instagram/" target="_blank">
+                            <img src="{% static 'cats/images/instagram.png' %}" height="30px" />
+                        </a>
+                    </td>
+                    <td class="med">
+                        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">
+                            <img src="{% static 'cats/images/youtube.png' %}" height="45px" />
+                        </a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <center>
+        <h1>Ваши данные отправлены!</h1>
+
+        <ul>
+            Имя: {{ person.first_name }} Фамилия: {{ person.last_name }} Пол: {{ person.gender }} Возраст: {{ person.age }}
+        </ul>
+
+        <a href="{% url 'cats:guests' %}">Отправить еще раз?</a>
+    </center>
+</body>
+
+</html>
