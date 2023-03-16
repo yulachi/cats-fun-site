@@ -30,12 +30,13 @@ repos:
       - id: docformatter
         args: [--in-place, --wrap-summaries=99, --wrap-descriptions=99]
 
-  # yaml formatting
-  - repo: https://github.com/pre-commit/mirrors-prettier
-    rev: v3.0.0-alpha.6
-    hooks:
-      - id: prettier
-        types: [yaml]
+  # BUG: doesn't work on Ubuntu 20.04.1 LTS
+  # # yaml formatting
+  # - repo: https://github.com/pre-commit/mirrors-prettier
+  #   rev: v3.0.0-alpha.6
+  #   hooks:
+  #     - id: prettier
+  #       types: [yaml]
 
   # shell scripts linter
   - repo: https://github.com/shellcheck-py/shellcheck-py
