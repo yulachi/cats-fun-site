@@ -9,7 +9,7 @@
 
 # Запуск сервера с сайтом
 
-```bash
+```console
 # активация venv с django
 poetry shell
 
@@ -24,7 +24,7 @@ python manage.py runserver
 
 ## Установка зависимостей
 
-```bash
+```console
 # менеджер зависимостей poetry (также необходим python 3.10)
 pip install poetry
 
@@ -34,7 +34,7 @@ poetry install --without dev
 
 ### Установка python 3.10 (опционально)
 
-```bash
+```console
 ./scripts/ubuntu_build_python.sh
 export PATH=/opt/python/3.10.0/bin/:$PATH
 ```
