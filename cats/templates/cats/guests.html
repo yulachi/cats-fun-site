@@ -1,71 +1,16 @@
-<html>
-{% load static %}
+{% extends "cats/menu.html" %} {% load static %} {% block content %}
 
-<head>
-    <meta charset="UTF-8" />
-    <title>Котики это чудо</title>
-    <link rel="stylesheet" href="{% static 'cats/navigation.css' %}" />
-</head>
+<center>
+    <h2>Пополняем коллекцию котиков!</h2>
 
-<body>
-    <div>
-        <div class="navigation">
-            <table width="100%">
-                <tr>
-                    <td class="inactive">
-                        <a href="{% url 'cats:index' %}"> Главная </a>
-                    </td>
-                    <td class="inactive">
-                        <a href="{% url 'cats:memes' %}">
-                                Мемы с котиками
-                            </a>
-                    </td>
-                    <td class="inactive">
-                        <a href="{% url 'cats:perse' %}">
-                                Персидские котики
-                            </a>
-                    </td>
-                    <td class="inactive">
-                        <a href="{% url 'cats:scotland' %}">
-                                Шотландские котики
-                            </a>
-                    </td>
-                    <td class="inactive">
-                        <a href="{% url 'cats:wild' %}"> Дикие котики </a>
-                    </td>
+    <p0>
+        <i> Заполните форму о вас! </i>
+    </p0>
+    <br /><br />
+</center>
 
-                    <td class="active">
-                        <a href="{% url 'cats:guests' %}"> Ваши котики </a>
-                    </td>
-
-                    <td class="med">
-                        <a href="https://www.instagram.com/cats_of_instagram/" target="_blank">
-                            <img src="{% static 'cats/images/instagram.png' %}" height="30px" />
-                        </a>
-                    </td>
-                    <td class="med">
-                        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">
-                            <img src="{% static 'cats/images/youtube.png' %}" height="45px" />
-                        </a>
-                    </td>
-                </tr>
-            </table>
-        </div>
-    </div>
-
-    <center>
-        <h2>Пополняем коллекцию котиков!</h2>
-
-        <p0>
-            <i> Заполните форму о вас! </i>
-        </p0>
-        <br /><br />
-    </center>
-
-    <form action="{% url 'cats:guests' %}" method="post">
-        {% csrf_token %} {{ form.as_div }}
-        <input type="submit" value="Отправить" />
-    </form>
-</body>
-
-</html>
+<form action="{% url 'cats:guests' %}" method="post">
+    {% csrf_token %} {{ form.as_div }}
+    <input type="submit" value="Отправить" />
+</form>
+{% endblock content %}

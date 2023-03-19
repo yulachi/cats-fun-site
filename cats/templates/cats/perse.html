@@ -1,93 +1,37 @@
-<html>
-{% load static %}
+{% extends "cats/menu.html" %} {% load static %} {% block content %}
+<center>
+    <h1>
+        Персидские коты ("иранские коты") - <br />одни из самых старейших и популярных в мире
+    </h1>
 
-<head>
-    <meta charset="UTF-8" />
-    <title>Котики это чудо</title>
-    <link rel="stylesheet" href="{% static 'cats/navigation.css' %}" />
-</head>
-
-<body>
-    <div>
-        <div class="navigation">
-            <table width="100%">
-                <tr>
-                    <td class="inactive">
-                        <a href="{% url 'cats:index' %}"> Главная </a>
-                    </td>
-                    <td class="inactive">
-                        <a href="{% url 'cats:memes' %}">
-                                Мемы с котиками
-                            </a>
-                    </td>
-                    <td class="active">
-                        <a href="{% url 'cats:perse' %}">
-                                Персидские котики
-                            </a>
-                    </td>
-                    <td class="inactive">
-                        <a href="{% url 'cats:scotland' %}">
-                                Шотландские котики
-                            </a>
-                    </td>
-                    <td class="inactive">
-                        <a href="{% url 'cats:wild' %}"> Дикие котики </a>
-                    </td>
-
-                    <td class="inactive">
-                        <a href="{% url 'cats:guests' %}"> Ваши котики </a>
-                    </td>
-
-                    <td class="med">
-                        <a href="https://www.instagram.com/cats_of_instagram/" target="_blank">
-                            <img src="{% static 'cats/images/instagram.png' %}" height="30px" />
-                        </a>
-                    </td>
-                    <td class="med">
-                        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">
-                            <img src="{% static 'cats/images/youtube.png' %}" height="45px" />
-                        </a>
-                    </td>
-                </tr>
-            </table>
-        </div>
-    </div>
-
-    <center>
-        <h1>
-            Персидские коты ("иранские коты") - <br />одни из самых старейших и популярных в мире
-        </h1>
-
-        <figure>
-            <img src="{% static 'cats/images/perse/pers0.jpg' %} " width="300px" />
-            <figcaption>Белый персик</figcaption>
-        </figure>
-        <figure>
-            <img src="{% static 'cats/images/perse/pers1.jpg' %} " width="300px" />
-            <figcaption>Злой персик</figcaption>
-        </figure>
-        <a name="cloud"></a>
-        <figure>
-            <img src="{% static 'cats/images/perse/pers2.jpg' %} " width="300px" />
-            <figcaption>Облачко</figcaption>
-        </figure>
-        <figure>
-            <img src="{% static 'cats/images/perse/pers3.jpg' %} " width="300px" />
-            <figcaption>Очень милый</figcaption>
-        </figure>
-        <figure>
-            <img src="{% static 'cats/images/perse/pers4.jpg' %} " width="300px" />
-            <figcaption>Армия персиков</figcaption>
-        </figure>
-        <figure>
-            <img src="{% static 'cats/images/perse/pers5.jpg' %} " width="300px" />
-            <figcaption>Царь горы</figcaption>
-        </figure>
-        <figure>
-            <img src="{% static 'cats/images/perse/pers6.jpg' %} " width="300px" />
-            <figcaption>Уходи со страницы</figcaption>
-        </figure>
-    </center>
-</body>
-
-</html>
+    <figure>
+        <img src="{% static 'cats/images/perse/pers0.jpg' %} " width="300px" />
+        <figcaption>Белый персик</figcaption>
+    </figure>
+    <figure>
+        <img src="{% static 'cats/images/perse/pers1.jpg' %} " width="300px" />
+        <figcaption>Злой персик</figcaption>
+    </figure>
+    <a name="cloud"></a>
+    <figure>
+        <img src="{% static 'cats/images/perse/pers2.jpg' %} " width="300px" />
+        <figcaption>Облачко</figcaption>
+    </figure>
+    <figure>
+        <img src="{% static 'cats/images/perse/pers3.jpg' %} " width="300px" />
+        <figcaption>Очень милый</figcaption>
+    </figure>
+    <figure>
+        <img src="{% static 'cats/images/perse/pers4.jpg' %} " width="300px" />
+        <figcaption>Армия персиков</figcaption>
+    </figure>
+    <figure>
+        <img src="{% static 'cats/images/perse/pers5.jpg' %} " width="300px" />
+        <figcaption>Царь горы</figcaption>
+    </figure>
+    <figure>
+        <img src="{% static 'cats/images/perse/pers6.jpg' %} " width="300px" />
+        <figcaption>Уходи со страницы</figcaption>
+    </figure>
+</center>
+{% endblock content %}

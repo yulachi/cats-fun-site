@@ -1,157 +1,103 @@
-<html>
-{% load static %}
+{% extends "cats/menu.html" %} {% load static %} {% block content %}
 
-<head>
-    <meta charset="UTF-8" />
-    <title>Котики это чудо</title>
-    <link rel="stylesheet" href="{% static 'cats/navigation.css' %}" />
-</head>
+<style>
+    td {
+        color: white;
+        text-decoration: none;
+        padding: 10px;
+    }
 
-<body>
-    <div>
-        <div class="navigation">
-            <table width="100%">
-                <tr>
-                    <td class="inactive">
-                        <a href="{% url 'cats:index' %}"> Главная </a>
-                    </td>
-                    <td class="active">
-                        <a href="{% url 'cats:memes' %}">
-                                Мемы с котиками
-                            </a>
-                    </td>
-                    <td class="inactive">
-                        <a href="{% url 'cats:perse' %}">
-                                Персидские котики
-                            </a>
-                    </td>
-                    <td class="inactive">
-                        <a href="{% url 'cats:scotland' %}">
-                                Шотландские котики
-                            </a>
-                    </td>
-                    <td class="inactive">
-                        <a href="{% url 'cats:wild' %}"> Дикие котики </a>
-                    </td>
+    td a {
+        color: white;
+        text-decoration: none;
+        padding: 10px;
+    }
+</style>
 
-                    <td class="inactive">
-                        <a href="{% url 'cats:guests' %}"> Ваши котики </a>
-                    </td>
-
-                    <td class="med">
-                        <a href="https://www.instagram.com/cats_of_instagram/" target="_blank">
-                            <img src="{% static 'cats/images/instagram.png' %}" height="30px" />
-                        </a>
-                    </td>
-                    <td class="med">
-                        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">
-                            <img src="{% static 'cats/images/youtube.png' %}" height="45px" />
-                        </a>
-                    </td>
-                </tr>
-            </table>
-        </div>
-    </div>
-
-    <style>
-        td {
-            color: white;
-            text-decoration: none;
-            padding: 10px;
-        }
-
-        td a {
-            color: white;
-            text-decoration: none;
-            padding: 10px;
-        }
-    </style>
-    <center>
-        <h1>Смешные картинки</h1>
-        <table background="{% static 'cats/images/memes/bg_flowers.jpg' %}" width="90%">
-            <tr padding="40px">
-                <td width="34%" bgcolor="maroon">
-                    <font size="+2"> Котики? </font>
-                </td>
-                <td width="33%" bgcolor="maroon">
-                    <font size="+2 "> Мемы? </font>
-                </td>
-                <td width="33%" bgcolor="maroon">
-                    <font size="+2 ">
-                        <a href="https://www.youtube.com/watch?v=6RwNT2ravz0&ab_channel=%D0%9B%D0%90%D0%99%D0%A2%D0%98%D0%9C ">
-                                Загадка вселенной? << Кликни
-                            </a>
-                    </font>
-                </td>
-            </tr>
-            <tr>
-                <td width="34%">
-                    <img src="{% static 'cats/images/memes/mem0.jpg' %} " width="100% " />
-                </td>
-                <td width="33%">
-                    <img src="{% static 'cats/images/memes/mem1.jpg' %} " width="100% " />
-                </td>
-                <td width="33%">
-                    <img src="{% static 'cats/images/memes/mem2.jpg' %} " width="100% " />
-                </td>
-            </tr>
-            <tr>
-                <td width="34%">
-                    <img src="{% static 'cats/images/memes/mem3.jpg' %} " width="100% " />
-                </td>
-                <td width="33%">
-                    <img src="{% static 'cats/images/memes/mem4.jpg' %} " width="100% " />
-                </td>
-                <td width="33%">
-                    <img src="{% static 'cats/images/memes/mem5.jpg' %} " width="100% " />
-                </td>
-            </tr>
-            <tr>
-                <td width="34%">
-                    <img src="{% static 'cats/images/memes/mem6.jpg' %} " width="100% " />
-                </td>
-                <td width="33%">
-                    <img src="{% static 'cats/images/memes/mem7.jpg' %} " width="100% " />
-                </td>
-                <td width="33%">
-                    <img src="{% static 'cats/images/memes/mem8.jpg' %} " width="100% " />
-                </td>
-            </tr>
-            <tr>
-                <td width="34%">
-                    <img src="{% static 'cats/images/memes/mem9.jpg' %} " width="100% " />
-                </td>
-                <td width="33%">
-                    <img src="{% static 'cats/images/memes/mem10.jpg' %} " width="100% " />
-                </td>
-                <td width="33%">
-                    <img src="{% static 'cats/images/memes/mem11.jpg' %} " width="100% " />
-                </td>
-            </tr>
-            <tr>
-                <td width="34%">
-                    <img src="{% static 'cats/images/memes/mem12.jpg' %} " width="100% " />
-                </td>
-                <td width="33%">
-                    <img src="{% static 'cats/images/memes/mem13.jpg' %} " width="100% " />
-                </td>
-                <td width="33%">
-                    <img src="{% static 'cats/images/memes/mem14.jpg' %} " width="100% " />
-                </td>
-            </tr>
-            <tr>
-                <td width="34%">
-                    <img src="{% static 'cats/images/memes/mem15.jpg' %} " width="100% " />
-                </td>
-                <td width="33%">
-                    <img src="{% static 'cats/images/memes/mem16.jpg' %} " width="100% " />
-                </td>
-                <td width="33%">
-                    <img src="{% static 'cats/images/memes/mem17.jpg' %} " width="100% " />
-                </td>
-            </tr>
-        </table>
-    </center>
-</body>
-
-</html>
+<center>
+    <h1>Смешные картинки</h1>
+    <table background="{% static 'cats/images/memes/bg_flowers.jpg' %}" width="90%">
+        <tr padding="40px">
+            <td width="34%" bgcolor="maroon">
+                <font size="+2"> Котики? </font>
+            </td>
+            <td width="33%" bgcolor="maroon">
+                <font size="+2 "> Мемы? </font>
+            </td>
+            <td width="33%" bgcolor="maroon">
+                <font size="+2 ">
+                    <a href="https://www.youtube.com/watch?v=6RwNT2ravz0&ab_channel=%D0%9B%D0%90%D0%99%D0%A2%D0%98%D0%9C ">
+                        Загадка вселенной? << Кликни
+                    </a>
+                </font>
+            </td>
+        </tr>
+        <tr>
+            <td width="34%">
+                <img src="{% static 'cats/images/memes/mem0.jpg' %} " width="100% " />
+            </td>
+            <td width="33%">
+                <img src="{% static 'cats/images/memes/mem1.jpg' %} " width="100% " />
+            </td>
+            <td width="33%">
+                <img src="{% static 'cats/images/memes/mem2.jpg' %} " width="100% " />
+            </td>
+        </tr>
+        <tr>
+            <td width="34%">
+                <img src="{% static 'cats/images/memes/mem3.jpg' %} " width="100% " />
+            </td>
+            <td width="33%">
+                <img src="{% static 'cats/images/memes/mem4.jpg' %} " width="100% " />
+            </td>
+            <td width="33%">
+                <img src="{% static 'cats/images/memes/mem5.jpg' %} " width="100% " />
+            </td>
+        </tr>
+        <tr>
+            <td width="34%">
+                <img src="{% static 'cats/images/memes/mem6.jpg' %} " width="100% " />
+            </td>
+            <td width="33%">
+                <img src="{% static 'cats/images/memes/mem7.jpg' %} " width="100% " />
+            </td>
+            <td width="33%">
+                <img src="{% static 'cats/images/memes/mem8.jpg' %} " width="100% " />
+            </td>
+        </tr>
+        <tr>
+            <td width="34%">
+                <img src="{% static 'cats/images/memes/mem9.jpg' %} " width="100% " />
+            </td>
+            <td width="33%">
+                <img src="{% static 'cats/images/memes/mem10.jpg' %} " width="100% " />
+            </td>
+            <td width="33%">
+                <img src="{% static 'cats/images/memes/mem11.jpg' %} " width="100% " />
+            </td>
+        </tr>
+        <tr>
+            <td width="34%">
+                <img src="{% static 'cats/images/memes/mem12.jpg' %} " width="100% " />
+            </td>
+            <td width="33%">
+                <img src="{% static 'cats/images/memes/mem13.jpg' %} " width="100% " />
+            </td>
+            <td width="33%">
+                <img src="{% static 'cats/images/memes/mem14.jpg' %} " width="100% " />
+            </td>
+        </tr>
+        <tr>
+            <td width="34%">
+                <img src="{% static 'cats/images/memes/mem15.jpg' %} " width="100% " />
+            </td>
+            <td width="33%">
+                <img src="{% static 'cats/images/memes/mem16.jpg' %} " width="100% " />
+            </td>
+            <td width="33%">
+                <img src="{% static 'cats/images/memes/mem17.jpg' %} " width="100% " />
+            </td>
+        </tr>
+    </table>
+</center>
+{% endblock content %}
