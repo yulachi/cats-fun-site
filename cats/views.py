@@ -28,15 +28,13 @@ def wild(request: HttpRequest):
 
 
 def guests(request: HttpRequest):
-    if request.method == "POST":
-        form = PersonForm(request.POST)
-        if form.is_valid():
-            person = form.save()
-            return HttpResponseRedirect(reverse("cats:person", args=(person.id,)))
-    else:
-        form = PersonForm()
+    post_data = request.POST or None
+    person_form = PersonForm(post_data)
+    if person_form.is_valid():
+        person = person_form.save()
+        return HttpResponseRedirect(reverse("cats:person", args=(person.id,)))
 
-    return render(request, "cats/guests.html", {"form": form})
+    return render(request, "cats/guests.html", {"form": person_form})
 
 
 class PersonView(generic.DetailView):
