@@ -15,7 +15,11 @@ class Person(models.Model):
 
     class Meta:
         constraints = [
-            models.CheckConstraint(check=models.Q(age__lte=120), name="age_lte_120"),
+            models.CheckConstraint(
+                check=models.Q(age__lte=120),
+                name="age_lte_120",
+                violation_error_message="Age should be less or equal to 120",
+            ),
         ]
 
     def __str__(self):
