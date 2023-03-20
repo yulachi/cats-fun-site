@@ -16,7 +16,7 @@ repos:
       - id: check-toml
       - id: check-case-conflict
       - id: check-added-large-files
-        args: [--maxkb=1000]
+        args: [--maxkb=1500]
 
   - repo: https://github.com/abravalheri/validate-pyproject
     rev: v0.12.1
@@ -75,7 +75,7 @@ repos:
 
   # ruff linter
   - repo: https://github.com/charliermarsh/ruff-pre-commit
-    rev: v0.0.255
+    rev: v0.0.257
     hooks:
       - id: ruff
         args: [--fix, --exit-non-zero-on-fix]

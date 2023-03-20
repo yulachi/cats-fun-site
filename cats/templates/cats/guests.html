@@ -1,0 +1,20 @@
+{% extends "cats/menu.html" %}
+{% load static %}
+{% block content %}
+
+<center>
+    <h2>Пополняем коллекцию котиков!</h2>
+
+    <p0>
+        <i> Заполните форму о вас! </i>
+    </p0>
+    <br /><br />
+</center>
+
+<form action="{% url 'cats:guests' %}" method="post">
+    {% csrf_token %}
+    <center>
+        {{ form.as_p }}
+    </center>
+</form>
+{% endblock content %}
