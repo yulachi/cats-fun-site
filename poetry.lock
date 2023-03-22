@@ -137,21 +137,6 @@ argon2 = ["argon2-cffi (>=19.1.0)"]
 bcrypt = ["bcrypt"]
 
 [[package]]
-name = "django-multiselectfield"
-version = "0.1.12"
-description = "Django multiple select field"
-category = "main"
-optional = false
-python-versions = "*"
-files = [
-    {file = "django-multiselectfield-0.1.12.tar.gz", hash = "sha256:d0a4c71568fb2332c71478ffac9f8708e01314a35cf923dfd7a191343452f9f9"},
-    {file = "django_multiselectfield-0.1.12-py3-none-any.whl", hash = "sha256:c270faa7f80588214c55f2d68cbddb2add525c2aa830c216b8a198de914eb470"},
-]
-
-[package.dependencies]
-django = ">=1.4"
-
-[[package]]
 name = "filelock"
 version = "3.10.1"
 description = "A platform independent file lock."
@@ -422,4 +407,4 @@ test = ["covdefaults (>=2.2.2)", "coverage (>=7.1)", "coverage-enable-subprocess
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "6b039a5f48dde3bc1bfc72ccf7f88c4a95ab1c388db75543c33aa3b1d6fad393"
+content-hash = "0c38e8981fe14c48b312bafb9a5feee284f05f054e9ff2a8ab7928c7f2ee5a7f"
