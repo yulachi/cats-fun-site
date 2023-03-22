@@ -3,8 +3,8 @@ from django.shortcuts import render
 from django.urls import reverse
 from django.views import generic
 
-from .forms import PersonForm
-from .models import Person
+from .forms import VisitorForm
+from .models import Visitor
 
 
 def index(request: HttpRequest):
@@ -29,14 +29,14 @@ def wild(request: HttpRequest):
 
 def guests(request: HttpRequest):
     post_data = request.POST or None
-    person_form = PersonForm(post_data)
-    if person_form.is_valid():
-        person = person_form.save()
-        return HttpResponseRedirect(reverse("cats:person", args=(person.id,)))
+    visitor_form = VisitorForm(post_data)
+    if visitor_form.is_valid():
+        visitor = visitor_form.save()
+        return HttpResponseRedirect(reverse("cats:visitor", args=(visitor.id,)))
 
-    return render(request, "cats/guests.html", {"form": person_form})
+    return render(request, "cats/guests.html", {"form": visitor_form})
 
 
-class PersonView(generic.DetailView):
-    model = Person
-    template_name = "cats/person.html"
+class VisitorView(generic.DetailView):
+    model = Visitor
+    template_name = "cats/visitor.html"

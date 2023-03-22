@@ -1,0 +1,12 @@
+{% extends "cats/menu.html" %} {% load static %} {% block content %}
+
+<center>
+    <h1>Ваши данные отправлены!</h1>
+
+    <ul>
+        Имя: {{ visitor.first_name }} Фамилия: {{ visitor.last_name }} Пол: {{ visitor.gender }} Возраст: {{ visitor.age }} Кличка питомца: {{ visitor.cat_name }} Возраст питомца: {{ visitor.cat_age }} Порода: {{ visitor.breed }}
+    </ul>
+
+    <a href="{% url 'cats:guests' %}">Отправить еще раз?</a>
+</center>
+{% endblock content %}
