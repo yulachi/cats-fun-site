@@ -16,6 +16,6 @@ urlpatterns = [
     path("wild/", views.wild, name="wild"),
     # ex: /cats/guests/
     path("guests/", views.guests, name="guests"),
-    # ex: /cats/person/5/
-    path("person/<int:pk>/", views.PersonView.as_view(), name="person"),
+    # ex: /cats/visitor/5/
+    path("visitor/<int:pk>/", views.VisitorView.as_view(), name="visitor"),
 ]
