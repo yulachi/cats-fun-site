@@ -1,6 +1,4 @@
-{% extends "cats/menu.html" %}
-{% load static %}
-{% block content %}
+{% extends "cats/menu.html" %} {% load static %} {% block content %}
 
 <center>
     <h2>Пополняем коллекцию котиков!</h2>
@@ -16,5 +14,6 @@
     <center>
         {{ form.as_p }}
     </center>
+    <input type="submit" value="Отправить" />
 </form>
 {% endblock content %}
