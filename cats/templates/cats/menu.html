@@ -1,5 +1,11 @@
 <html>
 {% load static %}
+{% url 'cats:index' as index %}
+{% url 'cats:memes' as memes %}
+{% url 'cats:perse' as perse %}
+{% url 'cats:scotland' as scotland %}
+{% url 'cats:wild' as wild %}
+{% url 'cats:guests' as guests %}
 
 <head>
     <meta charset="UTF-8" />
@@ -12,30 +18,30 @@
         <div class="navigation">
             <table width="100%">
                 <tr>
-                    <td class="inactive">
-                        <a href="{% url 'cats:index' %}"> Главная </a>
+                    <td class="{% if request.path == index %}active{% else %}inactive{% endif %}">
+                        <a href="{{ index }}"> Главная </a>
                     </td>
-                    <td class="inactive">
-                        <a href="{% url 'cats:memes' %}">
+                    <td class="{% if request.path == memes %}active{% else %}inactive{% endif %}">
+                        <a href="{{ memes }}">
                             Мемы с котиками
                         </a>
                     </td>
-                    <td class="inactive">
-                        <a href="{% url 'cats:perse' %}">
+                    <td class="{% if request.path == perse %}active{% else %}inactive{% endif %}">
+                        <a href="{{ perse }}">
                             Персидские котики
                         </a>
                     </td>
-                    <td class="inactive">
-                        <a href="{% url 'cats:scotland' %}">
+                    <td class="{% if request.path == scotland %}active{% else %}inactive{% endif %}">
+                        <a href="{{ scotland }}">
                             Шотландские котики
                         </a>
                     </td>
-                    <td class="inactive">
-                        <a href="{% url 'cats:wild' %}"> Дикие котики </a>
+                    <td class="{% if request.path == wild %}active{% else %}inactive{% endif %}">
+                        <a href="{{ wild }}"> Дикие котики </a>
                     </td>
 
-                    <td class="inactive">
-                        <a href="{% url 'cats:guests' %}"> Ваши котики </a>
+                    <td class="{% if request.path == guests %}active{% else %}inactive{% endif %}">
+                        <a href="{{ guests }}"> Ваши котики </a>
                     </td>
 
                     <td class="med">
