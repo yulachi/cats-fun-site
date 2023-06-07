@@ -35,6 +35,7 @@ def task(request: HttpRequest):
 class ResultView(generic.DetailView):
     model = TaskResult
     template_name = "algo/task_result.html"
+    context_object_name = "task_result"
 
 
 class ResultListView(generic.ListView):

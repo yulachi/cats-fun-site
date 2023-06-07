@@ -16,13 +16,13 @@
         </thead>
         <tbody style="border-top: 0px;">
             <tr>
-                <td>{{ taskresult.task.a }}</td>
-                <td>{{ taskresult.task.h }}</td>
-                <td>{{ taskresult.task.r }}</td>
-                <td>{{ taskresult.task.m }}</td>
-                <td>{% if taskresult.fit_in_cube %}Да!{% else %}Нет :({% endif %}</td>
-                <td>{% if taskresult.fit_in_cylinder %}Да!{% else %}Нет :({% endif %}</td>
-                <td>{{ taskresult.task.timestamp }}</td>
+                <td>{{ task_result.task.a }}</td>
+                <td>{{ task_result.task.h }}</td>
+                <td>{{ task_result.task.r }}</td>
+                <td>{{ task_result.task.m }}</td>
+                <td>{% if task_result.fit_in_cube %}Да!{% else %}Нет :({% endif %}</td>
+                <td>{% if task_result.fit_in_cylinder %}Да!{% else %}Нет :({% endif %}</td>
+                <td>{{ task_result.task.timestamp }}</td>
             </tr>
         </tbody>
     </table>
