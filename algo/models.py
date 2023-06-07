@@ -47,3 +47,20 @@ class AlgoTask(models.Model):
             f"volume = {self.m}, "
             f"date = {self.timestamp}"
         )
+
+
+class TaskResult(models.Model):
+    task = models.OneToOneField(
+        AlgoTask,
+        on_delete=models.CASCADE,
+        primary_key=True,
+    )
+    fit_in_cube = models.BooleanField()
+    fit_in_cylinder = models.BooleanField()
+
+    def __str__(self):
+        return (
+            f"fit in cube: {self.fit_in_cube}, "
+            f"fit in cylinder: {self.fit_in_cylinder}, "
+            f"task: {self.task}"
+        )

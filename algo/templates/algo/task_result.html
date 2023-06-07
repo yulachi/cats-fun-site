@@ -1,0 +1,28 @@
+{% extends "algo/menu.html" %} {% load static %} {% block content %}
+
+<style>
+    ul {
+        list-style-position: inside;
+        list-style-type: none;
+    }
+</style>
+
+<center>
+    <h2>Условия</h2>
+    <ul>
+        <li>Ребро куба: {{ taskresult.task.a }}</li>
+        <li>Высота цилиндра: {{ taskresult.task.h }}</li>
+        <li>Радиус основания: {{ taskresult.task.r }}</li>
+        <li>Объем жидкости: {{ taskresult.task.m }}</li>
+    </ul>
+
+    <h2>Результат</h2>
+    <ul>
+        <li>Достаточно ли объема куба: {% if taskresult.fit_in_cube %}Да!{% else %}Нет :({% endif %}</li>
+        <li>Достаточно ли объема цилиндра: {% if taskresult.fit_in_cylinder %}Да!{% else %}Нет :({% endif %}</li>
+    </ul>
+
+    <a href="{% url 'algo:task' %}">Решить еще раз?</a>
+</center>
+
+{% endblock content %}

@@ -2,18 +2,13 @@
 
 <center>
     <h2>Введите входные данные</h2>
-
-    <p0>
-        <i> Заполните форму </i>
-    </p0>
-    <br /><br />
 </center>
 
 <form action="{% url 'algo:task' %}" method="post">
     {% csrf_token %}
     <center>
         {{ form.as_p }}
-        <input type="submit" value="Отправить" />
+        <input type="submit" value="Решить" />
     </center>
 </form>
 {% endblock content %}

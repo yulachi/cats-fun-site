@@ -1,11 +1,13 @@
 from django.db.models import Avg, Count, Max, Min, StdDev, Sum
+from django.forms.models import model_to_dict
 from django.http import HttpRequest, HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse
 from django.views import generic
 
 from .forms import TaskForm
-from .models import AlgoTask
+from .models import AlgoTask, TaskResult
+from .solver import solve_task
 
 
 def index(request: HttpRequest):
@@ -17,9 +19,22 @@ def task(request: HttpRequest):
     task_form = TaskForm(post_data)
     if task_form.is_valid():
         task = task_form.save()
-        return HttpResponseRedirect(reverse("algo:task_result", args=(task.id,)))
+
+        # solving task and saving results
+        task_conditions = model_to_dict(task)
+        task_conditions.pop("id")
+        fit_in_cube, fit_in_cylinder = solve_task(**task_conditions)
+        result = TaskResult(task=task, fit_in_cube=fit_in_cube, fit_in_cylinder=fit_in_cylinder)
+        result.save()
+
+        return HttpResponseRedirect(reverse("algo:task_result", args=(result.pk,)))
 
     return render(request, "algo/task.html", {"form": task_form})
+
+
+class ResultView(generic.DetailView):
+    model = TaskResult
+    template_name = "algo/task_result.html"
 
 
 def history(request: HttpRequest):
@@ -58,8 +73,3 @@ def history(request: HttpRequest):
         "field_names": field_names,
     }
     return render(request, "table.html", context)
-
-
-class TaskResultView(generic.DetailView):
-    model = AlgoTask
-    template_name = "algo/task_result.html"
