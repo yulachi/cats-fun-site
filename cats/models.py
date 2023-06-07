@@ -32,6 +32,7 @@ class Visitor(models.Model):
     cat_age = models.PositiveSmallIntegerField()
     breed = models.CharField(max_length=2, choices=BREEDS)
 
+    # for checking constraints in db
     class Meta:
         constraints = [
             models.CheckConstraint(
