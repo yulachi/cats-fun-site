@@ -37,6 +37,12 @@ class ResultView(generic.DetailView):
     template_name = "algo/task_result.html"
 
 
+class ResultListView(generic.ListView):
+    model = TaskResult
+    template_name = "algo/history.html"
+    context_object_name = "results"
+
+
 def history(request: HttpRequest):
     # objects_list
     objects_values = AlgoTask.objects.values()

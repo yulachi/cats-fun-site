@@ -10,6 +10,6 @@ urlpatterns = [
     path("task/", views.task, name="task"),
     # ex: /algo/task_result/5/
     path("task_result/<int:pk>/", views.ResultView.as_view(), name="task_result"),
-    # # ex: /algo/history/
-    # path("history/", views.history, name="history"),
+    # ex: /algo/history/
+    path("history/", views.ResultListView.as_view(), name="history"),
 ]

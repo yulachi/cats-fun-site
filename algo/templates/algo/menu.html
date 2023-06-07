@@ -2,6 +2,7 @@
 {% load static %}
 {% url 'algo:index' as index %}
 {% url 'algo:task' as task %}
+{% url 'algo:history' as history %}
 
 <head>
     <meta charset="UTF-8" />
@@ -19,6 +20,9 @@
                     </td>
                     <td class="{% if request.path == task %}active{% else %}inactive{% endif %}">
                         <a href="{{ task }}"> Форма </a>
+                    </td>
+                    <td class="{% if request.path == history %}active{% else %}inactive{% endif %}">
+                        <a href="{{ history }}"> История решений </a>
                     </td>
                 </tr>
             </table>
