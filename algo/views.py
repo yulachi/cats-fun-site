@@ -6,6 +6,7 @@ from django.views import generic
 
 from .forms import TaskForm
 from .models import TaskResult
+from .utils.ordering_filtering import get_sort_options
 from .utils.solver import solve_task
 from .utils.stats import get_stats
 
@@ -45,5 +46,18 @@ class ResultListView(generic.ListView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context.update(**get_stats())
+
+        # statistics
+        context.update(**get_stats(context["object_list"]))
+
+        # sorting options
+        context.update(**get_sort_options())
+
         return context
+
+    def get_queryset(self):
+        queryset = TaskResult.objects.all()
+        order_by = self.request.GET.get("order_by")
+        if order_by:
+            return queryset.order_by(order_by)
+        return queryset

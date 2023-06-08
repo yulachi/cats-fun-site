@@ -19,8 +19,10 @@ namespace-packages = [
 # Ignore 'F401' (unused-import) in all '__init__.py' files.
 "__init__.py" = ["F401"]
 
-# Ignore 'RUF001' (contains ambiguous unicode character) in all 'forms.py' files.
+# Ignore 'RUF001' (contains ambiguous unicode character) in all 'forms.py' files and
+# files in utils folders.
 "forms.py" = ["RUF001"]
+"**utils/**.py" = ["RUF001"]
 
 # Ignore 'COM812' (trailing comma missing) and
 # 'I001' (import block is un-sorted or un-formatted) in all django's migrations files

@@ -45,6 +45,19 @@
         <li>Процент случаев, когда жидкость помещалась в куб: {{ mean_cube_fit }}</li>
         <li>Процент случаев, когда жидкость помещалась в цилиндр: {{ mean_cylinder_fit }}</li>
     </ul>
+
+    <p>
+        Сортировка
+    </p>
+    <ul>
+        {% for sort_option in sort_options %}
+        <li>
+            <a href="{{ history }}?order_by={{ sort_option.field }}">
+                {{ sort_option.description }}
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
 </center>
 
 {% endblock content %}
