@@ -1,4 +1,3 @@
-from django.db.models import Avg, Count, Max, Min, StdDev, Sum
 from django.forms.models import model_to_dict
 from django.http import HttpRequest, HttpResponseRedirect
 from django.shortcuts import render
@@ -6,8 +5,9 @@ from django.urls import reverse
 from django.views import generic
 
 from .forms import TaskForm
-from .models import AlgoTask, TaskResult
-from .solver import solve_task
+from .models import TaskResult
+from .utils.solver import solve_task
+from .utils.stats import get_stats
 
 
 def index(request: HttpRequest):
@@ -43,40 +43,7 @@ class ResultListView(generic.ListView):
     template_name = "algo/history.html"
     context_object_name = "results"
 
-
-def history(request: HttpRequest):
-    # objects_list
-    objects_values = AlgoTask.objects.values()
-
-    # values_list
-    objects_values_list = AlgoTask.objects.values_list()
-
-    cur_objects = AlgoTask.objects.all()
-    statistics_val = [
-        cur_objects.aggregate(Count("a")),
-        cur_objects.aggregate(Avg("a")),
-        cur_objects.aggregate(Min("a")),
-        cur_objects.aggregate(Max("a")),
-        cur_objects.aggregate(StdDev("a")),
-        cur_objects.aggregate(Sum("a")),
-    ]
-
-    statistics = {"statics_val": statistics_val}
-
-    # fields_name
-    fields = AlgoTask._meta.get_fields()
-
-    verbose_name_list = []
-    name_list = []
-    for e in fields:
-        verbose_name_list.append(e.verbose_name)
-        name_list.append(e.name)
-
-    field_names = verbose_name_list
-    context = {
-        "objects_values": objects_values,
-        "objects_values_list": objects_values_list,
-        "statistics": statistics,
-        "field_names": field_names,
-    }
-    return render(request, "table.html", context)
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context.update(**get_stats())
+        return context

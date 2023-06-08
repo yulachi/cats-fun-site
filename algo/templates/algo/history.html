@@ -1,5 +1,12 @@
 {% extends "algo/menu.html" %} {% load static %} {% block content %}
 
+<style>
+    ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+</style>
 
 <center>
     <table class="table table-bordered">
@@ -28,6 +35,16 @@
             {% endfor %}
         </tbody>
     </table>
+
+    <p>
+        Статистики
+    </p>
+    <ul>
+        <li>Средняя длина ребра куба: {{ mean_cube_edge }}</li>
+        <li>Максимальная высота цилиндра: {{ max_cylinder_height }}</li>
+        <li>Процент случаев, когда жидкость помещалась в куб: {{ mean_cube_fit }}</li>
+        <li>Процент случаев, когда жидкость помещалась в цилиндр: {{ mean_cylinder_fit }}</li>
+    </ul>
 </center>
 
 {% endblock content %}
