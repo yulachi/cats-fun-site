@@ -1,0 +1,33 @@
+{% extends "algo/menu.html" %} {% load static %} {% block content %}
+
+
+<center>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th scope="col">Ребро куба</th>
+                <th scope="col">Высота цилиндра</th>
+                <th scope="col">Радиус основания</th>
+                <th scope="col">Объем жидкости</th>
+                <th scope="col">Достаточно ли объема куба</th>
+                <th scope="col">Достаточно ли объема цилиндра</th>
+                <th scope="col">Дата</th>
+            </tr>
+        </thead>
+        <tbody style="border-top: 0px;">
+            <tr>
+                <td>{{ task_result.task.a }}</td>
+                <td>{{ task_result.task.h }}</td>
+                <td>{{ task_result.task.r }}</td>
+                <td>{{ task_result.task.m }}</td>
+                <td>{% if task_result.fit_in_cube %}Да!{% else %}Нет :({% endif %}</td>
+                <td>{% if task_result.fit_in_cylinder %}Да!{% else %}Нет :({% endif %}</td>
+                <td>{{ task_result.task.timestamp }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{% url 'algo:task' %}">Решить еще раз?</a>
+</center>
+
+{% endblock content %}
